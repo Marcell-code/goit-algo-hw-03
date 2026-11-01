@@ -1,28 +1,13 @@
 import random
-while True:
-    try:
-        min_numb = int(input("Введіть мінімальне значення: "))
-        max_numb = int(input("Введіть максимальне значення: "))
-        quantity = int(input("Введіть к-сть необхідних чисел: "))  
 
-        if min_numb > max_numb:
-            print("Мінімальне значення не може бути більше за максимальне спробуйте знову!")
-            continue
-        if quantity or min_numb or max_numb < 0:
-            print("Числа не можуть бути відємними!")
-            continue
-        if quantity > max_numb - min_numb +1:
-           print("У діапазоні замало чисел!")
-           continue
-        
-        break 
-    except ValueError:
-        print("Ви ввели не правильні значення!")
-
+    
 def get_number_tickets(min_numb, max_numb, quantity):
-    lucky_numbers = random.sample(range(min_numb, max_numb), quantity)
-    lucky_numbers.sort()
-    print(f"Ваші щасливі номера {lucky_numbers}")
+    if isinstance(min_numb, int) and isinstance(max_numb, int) and isinstance(quantity, int):       
+        lucky_numbers = random.sample(range(min_numb, max_numb), quantity)
+        lucky_numbers.sort()
+        return f"Ваші щасливі номера {lucky_numbers}"
+    else:
+        return []
 
-
-get_number_tickets(min_numb, max_numb, quantity)
+get_number_tickets(1, 49, 6)
+print(get_number_tickets(1, 49, 6))
