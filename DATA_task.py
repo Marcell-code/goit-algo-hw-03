@@ -1,6 +1,7 @@
 import datetime
 
-def get_days_fromm_today(date):
+
+def get_days_from_today(date):
 
     today_date = datetime.date.today()
     while True:
@@ -8,11 +9,12 @@ def get_days_fromm_today(date):
            your_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
            break
         except ValueError:
-           print("Невірний формат.")
-    
+           return None
+        
     date_delta =  today_date - your_date
 
-    return f"Кількість днів  {date_delta.days} "
+    return int(date_delta.days)
 
 
-get_days_fromm_today("2023-10-27")
+
+print(get_days_from_today("2027-09-20"))
