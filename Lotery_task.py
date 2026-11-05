@@ -1,7 +1,7 @@
 import random
 
     
-def get_number_tickets(min_numb: int, max_numb: int, quantity: int):
+def get_numbers_ticket(min_numb: int, max_numb: int, quantity: int):
     for i in(min_numb, max_numb, quantity):
         if isinstance(i, bool) and not isinstance(i, int, float):
             return []
