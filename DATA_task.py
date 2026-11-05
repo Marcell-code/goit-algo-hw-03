@@ -13,7 +13,7 @@ def get_days_from_today(date):
         
     date_delta =  today_date - your_date
 
-    return int(date_delta.days)
+    return date_delta.days
 
 
 
